@@ -1,0 +1,132 @@
+.navigation {
+  display: flex;
+  flex: 1 0 25rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 25rem;
+  z-index: 5;
+
+  @include transitions;
+  transform: translate(-100%);
+
+  @include lg {
+    position: relative;
+    z-index: 1;
+
+    transform: translate(0%);
+  }
+
+  &--active {
+    transform: translate(0%);
+  }
+
+  &__box {
+    height: 100%;
+    width: 100%;
+
+    margin-bottom: 0.125rem;
+    padding-bottom: 100%;
+
+    border-radius: 0.25rem;
+
+    background: $grey-medium;
+  }
+
+  &__item {
+    position: relative;
+
+    &--active {
+      &::before {
+        content: '';
+        display: block;
+
+        position: absolute;
+        top: 1.5rem;
+        left: -0.25rem;
+
+        height: 0.5rem;
+        width: 0.5rem;
+
+        border-radius: 50%;
+
+        background-color: $brand;
+
+        animation-name: navigation__item--active;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function: $cubic-bezier;
+
+        @keyframes navigation__item--active {
+          from { opacity: 0.5; }
+          to { opacity: 1; }
+        }
+      }
+    }
+
+    &--primary {
+      padding: 0.75rem;
+    }
+
+    &--secondary {
+      padding: 1rem;
+
+      border-bottom: solid thin $border;
+
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: 0;
+
+    &--primary {
+      color: $white;
+
+      font-size: 0.75rem;
+      text-align: center;
+    }
+
+    &--secondary {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0.25rem;
+
+    font-weight: 700;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+
+    overflow-y: scroll;
+
+    &--primary {
+      flex: 1 0 3.75rem;
+
+      background: $grey-dark;
+    }
+
+    &--secondary {
+      flex: 1 1 auto;
+
+      background: $grey-medium;
+
+      font-size: 0.75rem;
+
+      list-style: none;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+// Default transition for CSS
+@mixin transitions($prop: all, $speed: $animation-speed-fast, $ease: $cubic-bezier) {
+  transition: $prop $speed $ease;
+}

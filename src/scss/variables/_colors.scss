@@ -1,0 +1,18 @@
+/* ============
+_colors.scss
+Site colors
+============ */
+
+// Neutral
+$black: black;
+$white: white;
+$grey-light: #f7f7f7;
+$grey-medium: #efefef;
+$grey-dark: #333;
+$invisible: rgba(0, 0, 0, 0);
+
+// Site Palette
+$brand: #db0a5b;
+$brand-alternate: #ae7847;
+$border: rgba($grey-dark, 0.25);
+$hover: $brand;

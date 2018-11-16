@@ -1,0 +1,26 @@
+.input {
+  display: flex;
+  flex-direction: column;
+
+  &__element {
+    padding: 0.5rem 0.75rem;
+
+    border: solid thin $border;
+    border-radius: 0.125rem;
+
+    background: $grey-light;
+
+    @include transitions;
+
+    &:focus {
+      border: solid thin $brand;
+      outline: none;
+    }
+  }
+
+  &__label {
+    margin-bottom: 0.5rem;
+
+    font-size: 0.875rem;
+  }
+}

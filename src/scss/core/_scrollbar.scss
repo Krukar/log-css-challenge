@@ -1,0 +1,15 @@
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: $invisible;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border;
+
+  &:hover {
+    background: $brand;
+  }
+}
